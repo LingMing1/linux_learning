@@ -1,0 +1,9 @@
+obj-m:=hello.o
+hellomodule-objs:=module
+KDIR=/home/seeing-stm32/Desktop/linux/module/lib/modules/4.9.0-xilinx/build
+MAKE:=make
+default:
+	$(MAKE) -c $(KDIR) SUBDIRS=$(shell pwd) modules
+clean:
+	$(MAKE) -c $(KDIR) SUBDIRS=$(shell pwd) clean 
+
